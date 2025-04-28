@@ -1,0 +1,4 @@
+.track_container {
+  padding: 0 var(--section-horizontal-padding);
+  background-color: aqua;
+}
