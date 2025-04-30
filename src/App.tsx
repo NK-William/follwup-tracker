@@ -1,13 +1,11 @@
 import "./App.css";
-import { Navbar, Header, Stats, Track } from "./components";
+import { Navbar, TaskContent } from "./components";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Header />
-      <Stats />
-      <Track />
+      <TaskContent />
     </div>
   );
 }
