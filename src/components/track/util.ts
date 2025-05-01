@@ -1,3 +1,4 @@
+import { taskPhaseStatus } from "../../enums";
 import { IPhaseDTO } from "../../interfaces";
 
 const phasesDemo: IPhaseDTO[] = [
@@ -14,7 +15,8 @@ const phasesDemo: IPhaseDTO[] = [
     id: "d87b3d38-be1e-4129-9fd2-08dd0f1c6c61",
     name: "Quotation",
     number: 2,
-    description: "We will send a quotation before we start ordering the parts.",
+    description:
+      "We will send a quotation before we start ordering the parts. eeefef erfe efen uf eb ergbre i er iuhgurehgurhgurhg urhgurgu hurhgrhuirhug rhg ro hrjg urrgn rgh irfniofhgb p grngoi rk thj iitjgoi oijgh oroij om gr4mg jorg rokniruhgo tngo n rnhgirnbhoi tki hntngoitjoihgn tn oirtjgboi tjng orihgior girgfvo",
     icon: "document-text-outline",
     status: 1,
   },
@@ -54,4 +56,60 @@ const phasesDemo: IPhaseDTO[] = [
 
 export const useTrack = () => {
   return { phases: phasesDemo };
+};
+
+export const useRow = (
+  description?: string,
+  number?: number,
+  dataLength?: number,
+  status: taskPhaseStatus = taskPhaseStatus.Completed
+) => {
+  let taskPhaseDetailsHeight = 76;
+  if (!description) taskPhaseDetailsHeight = 40;
+
+  // taskNumberBadge
+  let taskNumberBadgeStyleOverride;
+  let taskNumberBadgeNumberStyleOverride;
+
+  // taskPhaseDetails
+  let taskPhaseDetailsStyleOverride;
+  let taskPhaseDetailsTextStyleOverride;
+
+  // taskTrackLine
+  let taskTrackLineStyleOverride;
+
+  // taskIcon
+  let taskIconStyleOverride;
+
+  if (status === taskPhaseStatus.InProgress) {
+    taskNumberBadgeStyleOverride = {
+      backgroundColor: "#D9D9D9",
+      borderWidth: 3,
+      borderColor: "#38a",
+    };
+    taskTrackLineStyleOverride = { backgroundColor: "#D9D9D9" };
+    taskNumberBadgeNumberStyleOverride = { color: "#38a" };
+  } else if (status === taskPhaseStatus.Pending) {
+    taskNumberBadgeStyleOverride = { backgroundColor: "#D9D9D9" };
+    taskNumberBadgeNumberStyleOverride = { color: "#0c2" };
+    taskTrackLineStyleOverride = { backgroundColor: "#D9D9D9" };
+    taskPhaseDetailsStyleOverride = {
+      borderColor: "#D9D9D9",
+    };
+    taskPhaseDetailsTextStyleOverride = { color: "#7A7A7A" };
+    taskIconStyleOverride = { color: "#D9D9D9" };
+  }
+
+  if (number === dataLength)
+    taskTrackLineStyleOverride = { height: 23, backgroundColor: "transparent" };
+
+  return {
+    taskNumberBadgeStyleOverride,
+    taskNumberBadgeNumberStyleOverride,
+    taskPhaseDetailsHeight,
+    taskPhaseDetailsStyleOverride,
+    taskPhaseDetailsTextStyleOverride,
+    taskTrackLineStyleOverride,
+    taskIconStyleOverride,
+  };
 };
