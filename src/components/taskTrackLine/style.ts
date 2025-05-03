@@ -1,5 +1,6 @@
 import { CSSProperties } from "react";
 import { ITaskTrackLineProps } from "./interface";
+import { primary } from "../../constants/colors";
 
 const getStyling = (
   props: ITaskTrackLineProps
@@ -11,7 +12,7 @@ const getStyling = (
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: "#38a",
+      backgroundColor: primary,
       height: 48,
       width: 3,
       ...props.containerStyle,

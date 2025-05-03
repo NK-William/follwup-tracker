@@ -12,14 +12,18 @@ code {
     monospace;
 }
 
+/* This colors should coincide with the colors in colors.ts */
 :root {
-  --color-light-text: white;
-  --color-dark-text: black;
-  --color-primary: #2d9cad;
-  --color-primary-dark: #08434c;
-  --color-error: #e40000;
-  --color-white: #ffffff;
-  --color-grey-divider: #ccc;
+  --color-primary: #3e5aa9;
+  --color-primary-light: #94a3cf;
+  --color-accent: #94a3cf;
+  --color-gray-light: #d9d9d9;
+  --color-gray: #7a7a7a;
+  --color-light-text: #fff;
+  --color-dark-text: #000;
+  --color-light: #fff;
+  --color-dark: #000;
+  --color-gray-divider: #ccc;
   --section-horizontal-padding: 20rem;
 }
 

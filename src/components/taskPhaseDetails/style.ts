@@ -1,5 +1,6 @@
 import { CSSProperties } from "react";
 import { ITaskPhaseDetailsProps } from "./interface";
+import { accent, grayLight, darkText } from "../../constants/colors";
 
 const getStyling = (
   props: ITaskPhaseDetailsProps
@@ -10,11 +11,11 @@ const getStyling = (
 } => {
   return {
     container: {
-      backgroundColor: "#D9D9D9",
+      backgroundColor: grayLight,
       borderLeftWidth: 2,
       borderTopWidth: 2,
       borderBottomWidth: 2,
-      borderColor: "#0c2",
+      borderColor: accent, // TODO::: Border is not working, fix it
       borderTopLeftRadius: 20,
       borderBottomLeftRadius: 20,
       paddingTop: 6,
@@ -24,10 +25,15 @@ const getStyling = (
       // maxWidth: 250,
       ...props.containerStyle,
     },
-    title: { fontWeight: "bold", fontSize: 14, color: "#202020" },
+    title: {
+      fontWeight: "bold",
+      fontSize: 14,
+      color: darkText,
+      ...props.textStyle,
+    },
     description: {
       fontSize: 14,
-      color: "#202020",
+      color: darkText,
       marginTop: 5,
       ...props.textStyle,
     },

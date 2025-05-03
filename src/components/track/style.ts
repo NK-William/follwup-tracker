@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { primary, accent } from "../../constants/colors";
 
 const getStyling = (): {
   rowContainer: CSSProperties;
@@ -26,12 +27,10 @@ const getStyling = (): {
       left: 33,
     },
     actionIcon: {
-      //   color: accent,
-      color: "#0c2",
+      color: accent,
     },
     rowIcon: {
-      // color: primary,
-      color: "#38a",
+      color: primary,
       transform: "translateX(-33px)",
     },
     taskNumberBadge: { transform: "translateX(-25px)" },

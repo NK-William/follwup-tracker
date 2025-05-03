@@ -1,5 +1,6 @@
 import { taskPhaseStatus } from "../../enums";
 import { IPhaseDTO } from "../../interfaces";
+import { primary, accent, grayLight, gray } from "../../constants/colors";
 
 const phasesDemo: IPhaseDTO[] = [
   {
@@ -83,21 +84,21 @@ export const useRow = (
 
   if (status === taskPhaseStatus.InProgress) {
     taskNumberBadgeStyleOverride = {
-      backgroundColor: "#D9D9D9",
+      backgroundColor: grayLight,
       borderWidth: 3,
-      borderColor: "#38a",
+      borderColor: primary,
     };
-    taskTrackLineStyleOverride = { backgroundColor: "#D9D9D9" };
-    taskNumberBadgeNumberStyleOverride = { color: "#38a" };
+    taskTrackLineStyleOverride = { backgroundColor: grayLight };
+    taskNumberBadgeNumberStyleOverride = { color: primary };
   } else if (status === taskPhaseStatus.Pending) {
-    taskNumberBadgeStyleOverride = { backgroundColor: "#D9D9D9" };
-    taskNumberBadgeNumberStyleOverride = { color: "#0c2" };
-    taskTrackLineStyleOverride = { backgroundColor: "#D9D9D9" };
+    taskNumberBadgeStyleOverride = { backgroundColor: grayLight };
+    taskNumberBadgeNumberStyleOverride = { color: accent };
+    taskTrackLineStyleOverride = { backgroundColor: grayLight };
     taskPhaseDetailsStyleOverride = {
-      borderColor: "#D9D9D9",
+      borderColor: grayLight,
     };
-    taskPhaseDetailsTextStyleOverride = { color: "#7A7A7A" };
-    taskIconStyleOverride = { color: "#D9D9D9" };
+    taskPhaseDetailsTextStyleOverride = { color: gray };
+    taskIconStyleOverride = { color: grayLight };
   }
 
   if (number === dataLength)

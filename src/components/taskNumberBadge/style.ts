@@ -1,5 +1,6 @@
 import { CSSProperties } from "react";
 import { ITaskNumberBadgeProps } from "./interface";
+import { primary } from "../../constants/colors";
 
 const getStyling = (
   props: ITaskNumberBadgeProps
@@ -15,7 +16,7 @@ const getStyling = (
       borderRadius: 30,
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: "#38a",
+      backgroundColor: primary,
       ...props.containerStyle,
     },
     number: {
