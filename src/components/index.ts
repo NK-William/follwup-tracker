@@ -6,3 +6,4 @@ export { default as TaskContent } from "./taskContent/TaskContent";
 export { default as TaskNumberBadge } from "./taskNumberBadge/TaskNumberBadge";
 export { default as TaskPhaseDetails } from "./taskPhaseDetails/TaskPhaseDetails";
 export { default as TaskTrackLine } from "./taskTrackLine/TaskTrackLine";
+export { default as FullDetailsView } from "./fullDetailsView/FullDetailsView";

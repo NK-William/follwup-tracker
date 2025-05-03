@@ -1,10 +1,16 @@
 .navbar_container {
   height: 60px;
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   align-items: center;
   justify-content: start;
   border-bottom: 1px solid var(--color-gray-divider);
   padding: 0 var(--section-horizontal-padding);
+  background-color: var(--color-light);
   padding: 0 20px;
 }
 .navbar_container img {

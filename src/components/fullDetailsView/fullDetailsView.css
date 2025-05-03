@@ -1,0 +1,31 @@
+.fullDetailsView_container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 var(--section-horizontal-padding);
+  z-index: 998;
+}
+
+.fullDetailsView_frame {
+  min-height: 100px;
+  max-height: 400px;
+  width: 100vw;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--color-light);
+  overflow-y: auto;
+}
+
+.fullDetailsView_title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-gray-text);
+  justify-self: center;
+  margin-bottom: 20px;
+}

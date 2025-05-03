@@ -1,3 +1,4 @@
 .taskContent_container {
   padding: 0 var(--section-horizontal-padding);
+  margin-top: 80px;
 }

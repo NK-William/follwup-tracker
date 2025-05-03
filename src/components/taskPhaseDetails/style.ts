@@ -12,12 +12,11 @@ const getStyling = (
   return {
     container: {
       backgroundColor: grayLight,
-      borderLeftWidth: 2,
-      borderTopWidth: 2,
-      borderBottomWidth: 2,
-      borderColor: accent, // TODO::: Border is not working, fix it
       borderTopLeftRadius: 20,
       borderBottomLeftRadius: 20,
+      borderTop: "2px solid " + accent,
+      borderBottom: "2px solid " + accent,
+      borderLeft: "2px solid " + accent,
       paddingTop: 6,
       paddingBottom: 6,
       paddingLeft: 14,

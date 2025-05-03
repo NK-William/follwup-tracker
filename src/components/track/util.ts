@@ -95,7 +95,9 @@ export const useRow = (
     taskNumberBadgeNumberStyleOverride = { color: accent };
     taskTrackLineStyleOverride = { backgroundColor: grayLight };
     taskPhaseDetailsStyleOverride = {
-      borderColor: grayLight,
+      borderTop: "2px solid " + grayLight,
+      borderBottom: "2px solid " + grayLight,
+      borderLeft: "2px solid " + grayLight,
     };
     taskPhaseDetailsTextStyleOverride = { color: gray };
     taskIconStyleOverride = { color: grayLight };
