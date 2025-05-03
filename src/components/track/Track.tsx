@@ -5,8 +5,10 @@ import { IPhaseDTO } from "../../interfaces";
 import getStyling from "./style";
 import { TaskNumberBadge, TaskPhaseDetails, TaskTrackLine } from "..";
 import { LiaToolsSolid } from "react-icons/lia";
+import { ITrackProps } from "./interface";
 
-const Track = () => {
+const Track: FC<ITrackProps> = (props) => {
+  const { onClick } = props;
   const { phases } = useTrack();
   const styles = getStyling();
   // TODO::: Don't use IPhaseDTO here, it should be inner model => phaseDTO
@@ -56,6 +58,7 @@ const Track = () => {
             }
           >
             <TaskPhaseDetails
+              onClick={onClick}
               hasLimitedDescriptionLines
               hasLimitedTitleLines
               title={name}

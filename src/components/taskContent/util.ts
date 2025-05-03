@@ -1,4 +1,5 @@
-import { ITaskDTO } from "../../interfaces";
+import { IFullDetailsViewData, ITaskDTO } from "../../interfaces";
+import { useState } from "react";
 
 // Demo data
 const demoTask: ITaskDTO = {
@@ -64,5 +65,19 @@ const demoTask: ITaskDTO = {
 };
 
 export const useTaskContent = () => {
-  return { taskData: demoTask };
+  const [showFullDetailsView, setShowFullDetailsView] = useState(false);
+  const [fullDetailsViewData, setFullDetailsViewData] =
+    useState<IFullDetailsViewData>({ title: "", text: "" });
+
+  const handleShowFullDetailsView = (data: IFullDetailsViewData) => {
+    setFullDetailsViewData(data);
+    setShowFullDetailsView(true);
+  };
+  return {
+    taskData: demoTask,
+    showFullDetailsView,
+    fullDetailsViewData,
+    setShowFullDetailsView,
+    handleShowFullDetailsView,
+  };
 };

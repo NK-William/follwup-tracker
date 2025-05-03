@@ -9,3 +9,4 @@ export const darkText = "#202020";
 export const light = "#FFFFFF";
 export const dark = "#000000";
 export const grayDivider = "#CCCCCC";
+export const close = "#E32A40";

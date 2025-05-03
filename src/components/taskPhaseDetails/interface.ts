@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { IFullDetailsViewData } from "../../interfaces";
 
 export interface ITaskPhaseDetailsProps {
   title: string;
@@ -7,4 +8,5 @@ export interface ITaskPhaseDetailsProps {
   textStyle?: CSSProperties;
   hasLimitedTitleLines?: boolean;
   hasLimitedDescriptionLines?: boolean;
+  onClick: (detailsData: IFullDetailsViewData) => void;
 }

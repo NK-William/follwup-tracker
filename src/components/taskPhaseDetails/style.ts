@@ -20,6 +20,7 @@ const getStyling = (
       paddingTop: 6,
       paddingBottom: 6,
       paddingLeft: 14,
+      cursor: "pointer",
       paddingRight: 14,
       // maxWidth: 250,
       ...props.containerStyle,

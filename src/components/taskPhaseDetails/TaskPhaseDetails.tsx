@@ -8,10 +8,14 @@ const TaskPhaseDetails: FC<ITaskPhaseDetailsProps> = (props) => {
     description,
     hasLimitedTitleLines,
     hasLimitedDescriptionLines,
+    onClick,
   } = props;
   const styles = getStyling(props);
   return (
-    <div style={styles.container}>
+    <div
+      style={styles.container}
+      onClick={() => onClick({ title, text: description })}
+    >
       <div
         style={{
           ...styles.title,

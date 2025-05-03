@@ -20,6 +20,15 @@
   border-radius: 20px;
   background-color: var(--color-light);
   overflow-y: auto;
+  position: relative;
+}
+
+.fullDetailsView_close_icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: var(--color-red);
+  cursor: pointer;
 }
 
 .fullDetailsView_title {
