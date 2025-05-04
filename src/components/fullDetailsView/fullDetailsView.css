@@ -15,12 +15,38 @@
 .fullDetailsView_frame {
   min-height: 100px;
   max-height: 400px;
-  width: 100vw;
+  max-width: 700px;
   padding: 20px;
   border-radius: 20px;
   background-color: var(--color-light);
   overflow-y: auto;
   position: relative;
+}
+
+@media (max-width: 1175px) {
+  .fullDetailsView_frame {
+    max-width: 600px;
+  }
+}
+@media (max-width: 1026px) {
+  .fullDetailsView_frame {
+    max-width: 500px;
+  }
+}
+@media (max-width: 924px) {
+  .fullDetailsView_frame {
+    max-width: 400px;
+  }
+}
+@media (max-width: 565px) {
+  .fullDetailsView_frame {
+    max-width: 300px;
+  }
+}
+@media (max-width: 365px) {
+  .fullDetailsView_frame {
+    max-width: 260px;
+  }
 }
 
 .fullDetailsView_close_icon {

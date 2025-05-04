@@ -28,7 +28,7 @@ code {
   --section-horizontal-padding: 20rem;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1500px) {
   :root {
     --section-horizontal-padding: 10rem;
   }
@@ -37,5 +37,11 @@ code {
 @media (max-width: 800px) {
   :root {
     --section-horizontal-padding: 1rem;
+  }
+}
+
+@media (max-width: 405px) {
+  :root {
+    --section-horizontal-padding: 0.2rem;
   }
 }

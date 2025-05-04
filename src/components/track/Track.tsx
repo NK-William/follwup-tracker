@@ -26,7 +26,7 @@ const Track: FC<ITrackProps> = (props) => {
     } = useRow(description, number, phases.length, status);
 
     return (
-      <div style={{ width: 1000 }}>
+      <div className="track_row_container">
         <div style={styles.rowContainer}>
           <div style={styles.rowIconBadgeContainer}>
             {icon ? (

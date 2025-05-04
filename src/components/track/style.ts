@@ -37,7 +37,7 @@ const getStyling = (): {
     taskPhaseDetails: {
       position: "absolute",
       right: 0,
-      marginLeft: 100,
+      marginLeft: 110,
     },
     trackContainer: {
       height: 48,
