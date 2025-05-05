@@ -1,5 +1,8 @@
 import { IFullDetailsViewData, ITaskDTO } from "../../interfaces";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import getAxiosClient from "../../util/axiosConfig";
+import { trackerTaskApi } from "../../constants/apis";
+import axios from "axios";
 
 // Demo data
 const demoTask: ITaskDTO = {
@@ -68,6 +71,25 @@ export const useTaskContent = () => {
   const [showFullDetailsView, setShowFullDetailsView] = useState(false);
   const [fullDetailsViewData, setFullDetailsViewData] =
     useState<IFullDetailsViewData>({ title: "", text: "" });
+
+  useEffect(() => {
+    console.log("useEffect triggered");
+    apiFetchTrackerTask();
+  }, []);
+
+  const apiFetchTrackerTask = async () => {
+    try {
+      const axiosClient = getAxiosClient();
+      const response = await axiosClient.get(
+        `${trackerTaskApi}/6a987db0-5797-40f8-f995-08dd6ea858f3`
+      );
+
+      console.log("Tracker task response:", response.data);
+    } catch (error) {
+      // TODO::: Push error for tracking
+      console.error("Error fetching tracker task:", error);
+    }
+  };
 
   const handleShowFullDetailsView = (data: IFullDetailsViewData) => {
     setFullDetailsViewData(data);
