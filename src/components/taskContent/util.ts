@@ -71,6 +71,8 @@ export const useTaskContent = () => {
   const [showFullDetailsView, setShowFullDetailsView] = useState(false);
   const [fullDetailsViewData, setFullDetailsViewData] =
     useState<IFullDetailsViewData>({ title: "", text: "" });
+  const [isLoading, setIsLoading] = useState(false);
+  const [task, setTask] = useState<ITaskDTO | undefined>(undefined);
 
   useEffect(() => {
     console.log("useEffect triggered");
@@ -80,14 +82,25 @@ export const useTaskContent = () => {
   const apiFetchTrackerTask = async () => {
     try {
       const axiosClient = getAxiosClient();
+      setIsLoading(true);
       const response = await axiosClient.get(
         `${trackerTaskApi}/6a987db0-5797-40f8-f995-08dd6ea858f3`
       );
 
       console.log("Tracker task response:", response.data);
+      if (response.status === 200) {
+        setTask(response.data);
+      } else {
+        // TODO::: Push error for tracking
+        // TODO::: Display error view
+        console.error("Error fetching tracker task:", response);
+      }
     } catch (error) {
       // TODO::: Push error for tracking
+      // TODO::: Display error view
       console.error("Error fetching tracker task:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -96,7 +109,8 @@ export const useTaskContent = () => {
     setShowFullDetailsView(true);
   };
   return {
-    taskData: demoTask,
+    taskData: task,
+    isLoading,
     showFullDetailsView,
     fullDetailsViewData,
     setShowFullDetailsView,

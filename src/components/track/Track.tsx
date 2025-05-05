@@ -8,8 +8,8 @@ import { LiaToolsSolid } from "react-icons/lia";
 import { ITrackProps } from "./interface";
 
 const Track: FC<ITrackProps> = (props) => {
-  const { onClick } = props;
-  const { phases } = useTrack();
+  const { task, onClick } = props;
+  const { phases } = useTrack(task);
   const styles = getStyling();
   // TODO::: Don't use IPhaseDTO here, it should be inner model => phaseDTO
   const Row = ({ phase }: { phase: IPhaseDTO }) => {
@@ -23,7 +23,7 @@ const Track: FC<ITrackProps> = (props) => {
       taskPhaseDetailsTextStyleOverride,
       taskTrackLineStyleOverride,
       taskIconStyleOverride,
-    } = useRow(description, number, phases.length, status);
+    } = useRow(description, number, phases?.length, status);
 
     return (
       <div className="track_row_container">
@@ -85,7 +85,7 @@ const Track: FC<ITrackProps> = (props) => {
     <div className="track_container">
       <div>
         {/* TODO::: Don't use IPhaseDTO here, it should be inner model => phaseDTO */}
-        {phases.map((phase) => (
+        {phases?.map((phase) => (
           <Row key={phase.id} phase={phase} />
         ))}
       </div>

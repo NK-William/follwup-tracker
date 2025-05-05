@@ -1,5 +1,5 @@
 import { taskPhaseStatus } from "../../enums";
-import { IPhaseDTO } from "../../interfaces";
+import { IPhaseDTO, ITaskDTO } from "../../interfaces";
 import { primary, accent, grayLight, gray } from "../../constants/colors";
 
 const phasesDemo: IPhaseDTO[] = [
@@ -55,8 +55,8 @@ const phasesDemo: IPhaseDTO[] = [
   },
 ];
 
-export const useTrack = () => {
-  return { phases: phasesDemo };
+export const useTrack = (task?: ITaskDTO) => {
+  return { phases: task?.phases };
 };
 
 export const useRow = (
