@@ -11,7 +11,7 @@ const Stats: FC<IStatsProps> = (props) => {
       <p>
         {phasesSum && CompletionDate
           ? `${currentPhase} of ${phasesSum} tasks completed, estimated completion time is ${getFormattedDate()}`
-          : "Something wen't wrong loading your stats"}
+          : ""}
       </p>
     </div>
   );

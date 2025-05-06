@@ -2,3 +2,8 @@
   padding: 0 var(--section-horizontal-padding);
   margin-top: 80px;
 }
+
+.taskContent_loader_container {
+  display: flex;
+  justify-content: center;
+}

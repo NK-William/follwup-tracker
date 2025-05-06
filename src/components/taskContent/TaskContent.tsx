@@ -19,7 +19,9 @@ const TaskContent = () => {
   return (
     <div className="taskContent_container">
       <Header text={taskData?.name} />
-      <FallingLines color={primary} width="60" visible={isLoading} />
+      <div className="taskContent_loader_container">
+        <FallingLines color={primary} width="60" visible={isLoading} />
+      </div>
       <Stats
         currentPhase={getNumberOfCompletedPhases()}
         phasesSum={taskData?.phases.length}
