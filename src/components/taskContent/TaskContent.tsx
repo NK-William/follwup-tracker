@@ -13,13 +13,18 @@ const TaskContent = () => {
     fullDetailsViewData,
     setShowFullDetailsView,
     handleShowFullDetailsView,
+    getNumberOfCompletedPhases,
   } = useTaskContent();
 
   return (
     <div className="taskContent_container">
       <Header text={taskData?.name} />
       <FallingLines color={primary} width="60" visible={isLoading} />
-      <Stats />
+      <Stats
+        currentPhase={getNumberOfCompletedPhases()}
+        phasesSum={taskData?.phases.length}
+        CompletionDate={taskData ? new Date(taskData?.eta) : undefined}
+      />
       <Track task={taskData} onClick={handleShowFullDetailsView} />
       {showFullDetailsView && (
         <FullDetailsView

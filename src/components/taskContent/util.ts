@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import getAxiosClient from "../../util/axiosConfig";
 import { trackerTaskApi } from "../../constants/apis";
 import axios from "axios";
+import { taskPhaseStatus } from "../../enums";
 
 // Demo data
 const demoTask: ITaskDTO = {
@@ -108,6 +109,16 @@ export const useTaskContent = () => {
     setFullDetailsViewData(data);
     setShowFullDetailsView(true);
   };
+
+  const getNumberOfCompletedPhases = () => {
+    if (!task) return 0;
+    const completedPhases = task.phases.filter(
+      (item) => item.status === taskPhaseStatus.Completed
+    ).length;
+
+    return completedPhases;
+  };
+
   return {
     taskData: task,
     isLoading,
@@ -115,5 +126,6 @@ export const useTaskContent = () => {
     fullDetailsViewData,
     setShowFullDetailsView,
     handleShowFullDetailsView,
+    getNumberOfCompletedPhases,
   };
 };
