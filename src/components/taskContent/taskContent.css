@@ -3,6 +3,30 @@
   margin-top: 80px;
 }
 
+.taskContent_placeholder_container {
+  margin-top: 30px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.taskContent_placeholder_container img {
+  width: 200px;
+  height: 300px;
+}
+
+@media (max-width: 565px) {
+  .taskContent_placeholder_container img {
+    width: 120px;
+    height: 200px;
+  }
+}
+
+.taskContent_placeholder_container p {
+  margin-top: 8px;
+  color: var(--color-primary);
+}
+
 .taskContent_loader_container {
   display: flex;
   justify-content: center;

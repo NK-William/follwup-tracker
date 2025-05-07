@@ -68,6 +68,8 @@ const demoTask: ITaskDTO = {
   ],
 };
 
+let noDataAfterFetch = false;
+
 export const useTaskContent = () => {
   const [showFullDetailsView, setShowFullDetailsView] = useState(false);
   const [fullDetailsViewData, setFullDetailsViewData] =
@@ -95,11 +97,13 @@ export const useTaskContent = () => {
         // TODO::: Push error for tracking
         // TODO::: Display error view
         console.error("Error fetching tracker task:", response);
+        noDataAfterFetch = true;
       }
     } catch (error) {
       // TODO::: Push error for tracking
       // TODO::: Display error view
       console.error("Error fetching tracker task:", error);
+      noDataAfterFetch = true;
     } finally {
       setIsLoading(false);
     }
@@ -124,6 +128,7 @@ export const useTaskContent = () => {
     isLoading,
     showFullDetailsView,
     fullDetailsViewData,
+    noDataAfterFetch,
     setShowFullDetailsView,
     handleShowFullDetailsView,
     getNumberOfCompletedPhases,
