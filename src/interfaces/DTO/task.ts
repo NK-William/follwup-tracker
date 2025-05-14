@@ -1,5 +1,5 @@
 import { taskStatus } from "../../enums";
-import { IPhaseDTO } from "./phase";
+import { IPhaseDTO } from "..";
 
 // TODO::: Remove un-used properties
 export interface ITaskDTO {

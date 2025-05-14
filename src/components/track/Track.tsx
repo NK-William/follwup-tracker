@@ -3,8 +3,12 @@ import "./track.css";
 import { useRow, useTrack } from "./util";
 import { IPhaseDTO } from "../../interfaces";
 import getStyling from "./style";
-import { TaskNumberBadge, TaskPhaseDetails, TaskTrackLine } from "..";
-import { LiaToolsSolid } from "react-icons/lia";
+import {
+  MappedIcon,
+  TaskNumberBadge,
+  TaskPhaseDetails,
+  TaskTrackLine,
+} from "..";
 import { ITrackProps } from "./interface";
 
 const Track: FC<ITrackProps> = (props) => {
@@ -25,15 +29,16 @@ const Track: FC<ITrackProps> = (props) => {
       taskIconStyleOverride,
     } = useRow(description, number, phases?.length, status);
 
+    console.log("got icon: ", icon);
+
     return (
       <div className="track_row_container">
         <div style={styles.rowContainer}>
           <div style={styles.rowIconBadgeContainer}>
             {icon ? (
-              // TODO::: Add a component for this
-              <LiaToolsSolid
-                size={30}
-                style={{ ...styles.rowIcon, ...taskIconStyleOverride }}
+              <MappedIcon
+                icon={icon}
+                taskIconStyleOverride={taskIconStyleOverride}
               />
             ) : (
               <div style={{ width: 30 }} />

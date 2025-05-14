@@ -10,3 +10,7 @@ export enum taskPhaseStatus {
   InProgress,
   Completed,
 }
+
+export enum IconTypeEnum {
+  Ionicons,
+}
