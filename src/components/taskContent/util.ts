@@ -2,12 +2,13 @@ import { IFullDetailsViewData, ITaskDTO } from "../../interfaces";
 import { useEffect, useState } from "react";
 import getAxiosClient from "../../util/axiosConfig";
 import { trackerTaskApi } from "../../constants/apis";
-import axios from "axios";
+import { useParams } from "react-router-dom";
 import { taskPhaseStatus } from "../../enums";
 
 let noDataAfterFetch = false;
 
 export const useTaskContent = () => {
+  const { taskId } = useParams();
   const [showFullDetailsView, setShowFullDetailsView] = useState(false);
   const [fullDetailsViewData, setFullDetailsViewData] =
     useState<IFullDetailsViewData>({ title: "", text: "" });
@@ -17,15 +18,15 @@ export const useTaskContent = () => {
   useEffect(() => {
     console.log("useEffect triggered");
     apiFetchTrackerTask();
-  }, []);
+  }, [taskId]);
+
+  console.log("Task ID from URL:", taskId);
 
   const apiFetchTrackerTask = async () => {
     try {
       const axiosClient = getAxiosClient();
       setIsLoading(true);
-      const response = await axiosClient.get(
-        `${trackerTaskApi}/6a987db0-5797-40f8-f995-08dd6ea858f3`
-      );
+      const response = await axiosClient.get(`${trackerTaskApi}/${taskId}`);
 
       console.log("Tracker task response:", response.data);
       if (response.status === 200) {
