@@ -4,6 +4,7 @@ import "./taskContent.css";
 import { Header, Stats, Track, FullDetailsView } from "..";
 import { FallingLines } from "react-loader-spinner";
 import { primary } from "../../constants/colors";
+import placeholder from "../../assets/placeholder.png";
 
 const TaskContent = () => {
   const {
@@ -22,7 +23,7 @@ const TaskContent = () => {
       <Header text={taskData?.name} />
       {noDataAfterFetch && (
         <div className="taskContent_placeholder_container">
-          <img src={"placeholder.png"} alt="Empty Placeholder" />
+          <img src={placeholder} alt="Empty Placeholder" />
           <p>Something went wrong</p>
         </div>
       )}
