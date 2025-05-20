@@ -15,7 +15,7 @@ const Track: FC<ITrackProps> = (props) => {
   const { task, onClick } = props;
   const { phases } = useTrack(task);
   const styles = getStyling();
-  // TODO::: Don't use IPhaseDTO here, it should be inner model => phaseDTO
+  // TODO:::v2 Don't use IPhaseDTO here, it should be inner model => phaseDTO
   const Row = ({ phase }: { phase: IPhaseDTO }) => {
     const { id, name, description, number, icon, status } = phase;
 
@@ -52,16 +52,7 @@ const Track: FC<ITrackProps> = (props) => {
               number={number}
             />
           </div>
-          <div
-            style={styles.taskPhaseDetails}
-            onClick={() =>
-              // expandPhaseDetails({ TODO::: resolve this
-              //   name: name,
-              //   description: description ?? "",
-              // })
-              null
-            }
-          >
+          <div style={styles.taskPhaseDetails}>
             <TaskPhaseDetails
               onClick={onClick}
               hasLimitedDescriptionLines
@@ -89,7 +80,7 @@ const Track: FC<ITrackProps> = (props) => {
   return (
     <div className="track_container">
       <div>
-        {/* TODO::: Don't use IPhaseDTO here, it should be inner model => phaseDTO */}
+        {/* TODO:::v2 Don't use IPhaseDTO here, it should be inner model => phaseDTO */}
         {phases?.map((phase) => (
           <Row key={phase.id} phase={phase} />
         ))}

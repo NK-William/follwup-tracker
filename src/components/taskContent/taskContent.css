@@ -25,6 +25,7 @@
 .taskContent_placeholder_container p {
   margin-top: 8px;
   color: var(--color-primary);
+  text-align: center;
 }
 
 .taskContent_loader_container {

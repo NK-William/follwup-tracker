@@ -14,6 +14,7 @@ export const useTaskContent = () => {
     useState<IFullDetailsViewData>({ title: "", text: "" });
   const [isLoading, setIsLoading] = useState(false);
   const [task, setTask] = useState<ITaskDTO | undefined>(undefined);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     console.log("useEffect triggered");
@@ -33,14 +34,12 @@ export const useTaskContent = () => {
         setTask(response.data);
       } else {
         // TODO::: Push error for tracking
-        // TODO::: Display error view
-        console.error("Error fetching tracker task:", response);
+        setErrorMessage("An error occurred displaying tracker task");
         noDataAfterFetch = true;
       }
     } catch (error) {
       // TODO::: Push error for tracking
-      // TODO::: Display error view
-      console.error("Error fetching tracker task:", error);
+      setErrorMessage("An error occurred displaying tracker task");
       noDataAfterFetch = true;
     } finally {
       setIsLoading(false);
@@ -67,6 +66,7 @@ export const useTaskContent = () => {
     showFullDetailsView,
     fullDetailsViewData,
     noDataAfterFetch,
+    errorMessage,
     setShowFullDetailsView,
     handleShowFullDetailsView,
     getNumberOfCompletedPhases,

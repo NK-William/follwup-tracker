@@ -13,6 +13,7 @@ const TaskContent = () => {
     showFullDetailsView,
     fullDetailsViewData,
     noDataAfterFetch,
+    errorMessage,
     setShowFullDetailsView,
     handleShowFullDetailsView,
     getNumberOfCompletedPhases,
@@ -24,7 +25,7 @@ const TaskContent = () => {
       {noDataAfterFetch && (
         <div className="taskContent_placeholder_container">
           <img src={placeholder} alt="Empty Placeholder" />
-          <p>Something went wrong</p>
+          <p>{errorMessage ? errorMessage : "Something went wrong"}</p>
         </div>
       )}
       <div className="taskContent_loader_container">
