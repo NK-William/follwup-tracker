@@ -35,7 +35,7 @@ const Track: FC<ITrackProps> = (props) => {
       <div className="track_row_container">
         <div style={styles.rowContainer}>
           <div style={styles.rowIconBadgeContainer}>
-            {icon ? (
+            {icon?.name ? (
               <MappedIcon
                 icon={icon}
                 taskIconStyleOverride={taskIconStyleOverride}
